@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Between Two Sets</title>
+</head>
+<body>
+    <script>
+        let a = [3,4];
+        let b = [24,48];
+
+        // function getTotalX(a, b) {
+        //     // Write your code here
+        //     let min = b[0], max = a[a.length - 1]
+        //     // for (let i = 0; i < a.length; i++) {
+        //     //     if (a[i] > max) max = a[i]
+        //     // }
+        //     // for (let j = 0; j < b.length; j++) {
+        //     //     if (b[j] < min) min = a[j]
+        //     // }
+        //     let count = 0
+        //     for (max; max <= min; max++) {
+        //         let sum = 0;
+        //         for (let i = 0; i < a.length; i++) {
+        //             sum += max % a[i]
+        //         }
+        //         for (let j = 0; j < b.length; j++) {
+        //             sum += b[j] % max
+        //         }
+        //         if( sum === 0) count++
+        //     }
+        //     return count
+        // }
+        //
+        // document.write(getTotalX(a,b))
+
+
+        // tìm các giá trị năằm giữa 2 mảng và là thừa số của arr2[0]; và là bội số của các phần tử trong arr1
+        let arr = [];
+        let result =[];
+        for (let i = a[a.length-1]; i <= b[0]; i++) {
+            if (check(b,i) === true)
+                arr.push(i);
+        }
+        for (let j = 0; j < arr.length; j++) {
+            if (check1(a,arr[j]) === true)
+                    result.push(arr[j]);
+        }
+        function check(array, num) {
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] % num !== 0) {
+                    return false;
+                }
+            } return true;
+        }
+        function check1(array, num) {
+            for (let i = 0; i < array.length; i++) {
+                if (num % array[i] !== 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        document.write(result);
+    </script>
+</body>
+</html>

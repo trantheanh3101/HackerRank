@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let ar = [1, 3, 2, 6, 1, 2];
+        let n = 6;
+        let k = 3;
+        document.write(divisibleSumPairs(n,k,ar));
+        function divisibleSumPairs(n, k, ar) {
+            let count = 0;
+            for (let i = 0; i < n; i++) {
+                for (let j = 1; j < n; j++) {
+                    let sum = 0;
+                    sum = ar[i] + ar[j+i];
+                    if (sum%k === 0){
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+    </script>
+</body>
+</html>

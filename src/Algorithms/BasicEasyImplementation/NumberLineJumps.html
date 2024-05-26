@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Number Line Jumps</title>
+</head>
+<p id="kq"></p>
+<body>
+    <script>
+        let x1 = +parseInt(prompt("x1"));
+        let v1 = +parseInt(prompt("v1"));
+        let x2 = +parseInt(prompt("x2"));
+        let v2 = +parseInt(prompt("v1"));
+
+        document.getElementById("kq").innerHTML = kangaroo(x1,v1,x2,v2);
+
+        function kangaroo(x1, v1, x2, v2) {
+            if (x1 >= x2) {
+                return "NO";
+            } else if (v1 <= v2) {
+                return "NO";
+            } else {
+                let arr1 = [];
+                let arr2 = [];
+                for (let i = 0; x1 < x2; i++) {
+                    x1 += v1;
+                    arr1.push(x1);
+                    x2 += v2;
+                    arr2.push(x2);
+                    if (arr1[i] === arr2[i]) {
+                        return "YES";
+                    }
+                }
+                return "NO";
+            }
+        }
+    </script>
+</body>
+</html>

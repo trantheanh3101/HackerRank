@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        var ss = "07:05:45PM";
+        document.write(timeConversion(ss));
+        function timeConversion(s) {
+            let h = 12;
+            let h1 = "00";
+            let timeEnd = s.slice(-2);
+            let hour =parseInt(s.slice(0,2));
+            h = h + hour;
+            if(timeEnd === "PM"){
+                if(hour !== 12){
+                    s = h + s.slice(2);
+                    s = s.slice(0,-2);
+                } else {
+                    s = s.slice(0,-2);
+                }
+            } else if(timeEnd === "AM"){
+                if (hour !== 12){
+                    s = s.slice(0,-2);
+                } else {
+                    s = h1+s.slice(2);
+                    s = s.slice(0,-2);
+                }
+            }
+            return s;
+        }
+    </script>
+</body>
+</html>

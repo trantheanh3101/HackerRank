@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>code</title>
+</head>
+<body>
+    <script>
+        var danhSach = [3, 1, 4, 1, 5, 9, 2, 6, 5];
+        function miniMaxSum(arr) {
+            let sumMin = 0;
+            let sumMax = 0;
+            let array = [];
+            function sapXepSoNguyen(array) {
+                array.sort(function(a, b) {
+                    return a - b;
+                });
+                return array;
+            }
+            let arrnew = sapXepSoNguyen(arr);
+
+            for(let i = 0;i < arrnew.length-1;i++){
+                sumMin += arrnew[i];
+            }
+            array.push(sumMin);
+
+            for(let i = arrnew.length-1;i >= 1 ;i--){
+                sumMax += arrnew[i];
+            }
+            array.push(sumMax);
+            console.log(array.join(" "));
+        }
+
+    </script>
+</body>
+</html>

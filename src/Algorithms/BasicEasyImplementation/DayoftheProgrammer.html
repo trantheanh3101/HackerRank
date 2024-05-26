@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day of the Programmer</title>
+</head>
+<body>
+    <script>
+        let year = +prompt("fill year");
+        document.write(dayOfProgrammer(year));
+        function dayOfProgrammer(year) {
+            function isLeapJulian(year) {      // In the Julian calendar, leap years are divisible by 4
+                return year % 4 === 0;
+            }
+            function isLeapGregorian(year) {
+                // in the Gregorian calendar, leap years are either of the following:
+                // Divisible by 400.
+                // Divisible by 4 and not divisible by 100.
+                return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
+            }
+            if (year < 1918) {
+                if (isLeapJulian(year)) {
+                    return "12.09." + year;
+                } else {
+                    return "13.09." + year;
+                }
+            } else if (year === 1918) {
+                // Special case due to transition
+                return "26.09.1918";
+            } else {
+                if (isLeapGregorian(year)) {
+                    return "12.09." + year;
+                } else {
+                    return "13.09." + year;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

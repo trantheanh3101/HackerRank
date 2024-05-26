@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let rades = [33,44,64,52,61,65,85];
+        document.write(gradingStudents(rades));
+        function gradingStudents(grades) {
+            let newGrades = [];
+            for (let i = 0; i < grades.length; i++) {
+                let surplus = grades[i]%5;
+                if(grades[i] < 38){
+                    newGrades.push(grades[i]);
+                } else if(surplus>=0 && surplus < 3){
+                    newGrades.push(grades[i]);
+                } else {
+                    newGrades.push(grades[i]-surplus+5);
+                }
+            }
+            return newGrades;
+        }
+    </script>
+</body>
+</html>

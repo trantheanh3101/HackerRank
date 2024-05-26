@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sales by Match</title>
+</head>
+<body>
+  <script>
+    ar = [10, 20, 20, 10, 10, 30, 50, 10, 20];
+    n=9;
+    function sockMerchant(n, ar) {
+        // tạo đối tượng chứa các thuôộc tính là các số có giá trị là số lần số đó xuất hiện trong mảng
+      let dem = {};
+      ar.forEach(function (item) {
+        if (dem[item]) {
+          dem[item]++;
+        } else {
+          dem[item] = 1;
+        }
+      });
+
+      //  dò các giá trị của mỗi thuộc tính
+        let count = 0;
+        for (const key  in dem) {
+            if (dem[key] > 1){
+                count+= Math.floor(dem[key]/2);
+            }
+        }
+
+        console.log(count);
+
+    }
+  </script>
+</body>
+</html>

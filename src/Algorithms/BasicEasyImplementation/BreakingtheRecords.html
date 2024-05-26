@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breaking the Records</title>
+</head>
+<body>
+    <script>
+        let a = [10,5,20,20,4,5,2,25,1]
+        function breakingRecords(scores) {
+            let max = scores[0];
+            let min = scores[0];
+            let countMin = 0;
+            let countMax = 0;
+            let arr = [];
+            for (let i = 1; i < scores.length; i++) {
+                if (scores[i] < min){
+                    min = scores[i];
+                    countMin++;
+                }
+                if (scores[i] > max){
+                    max = scores[i];
+                    countMax++;
+                }
+            }
+            arr.push(countMax);
+            arr.push(countMin);
+            return arr;
+            // console.log(countMax,countMin);
+        }
+        document.write(breakingRecords(a));
+    </script>
+</body>
+</html>
